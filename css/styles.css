@@ -1,0 +1,347 @@
+/* ------------- Ronald Keith Forsmo - StyleSheet --------------*/
+
+/*---FONTS---*/
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+/*---KEYFRAMES---*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+/*---MAIN STYLES---*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageWrapper {
+  position: absolute;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  padding-bottom: 3%;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.header {
+  width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+#logo {
+  width: 50%;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin-top: 4.5vh;
+  margin-left: 30px;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  float: right;
+  margin-right: 3%;
+}
+
+.nav ul {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin-top: 5.5vh;
+  min-width: 47%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 27px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageTitle {
+  margin: 150px auto 0 auto;
+  text-align: left; 
+  width: 85%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 85%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.bodyWrapper {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2%;
+}
+ 
+.project {
+  color: #fff;
+  float: left;
+  margin: 1%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 48%;
+}
+
+.project img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.projectTitle {
+  background: rgba(0,0,0,.5);
+  line-height: 225%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  letter-spacing: 4px;
+  font-size: 14px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+  }
+
+.projectTitle:hover {
+  opacity: 1;
+}
+
+#bigLogoWrapper {
+  position: relative;
+  text-align: left;
+  margin: 0 auto -1.3% auto;
+  width: 95%;
+}
+
+#bigLogo {
+  z-index: 1;
+  margin-top: 10%;
+  font-weight: lighter;
+  position: relative;
+  font-size: 95px;
+  color: #fff;
+  letter-spacing: 8px;
+  opacity: 0;
+  -moz-animation: fadein 1.5s ease-in 1s forwards; 
+  -webkit-animation: fadein 1.5s ease-in 1s forwards; 
+  -o-animation: fadein 1.5s ease-in 1s forwards; 
+  animation: fadein 1.5s ease-in 1s forwards;
+}
+
+.homeImageWrapper {
+  background-color: #3b3b3b;
+  width: 1280px;  
+  overflow: hidden;
+  line-height: 1px;
+}
+
+.homeImageWrapper img {
+  display: block;
+  height: 62vh;
+  opacity: 0;
+  width: 94%;
+  margin: auto;
+  -moz-animation: fadein 1.5s ease-in 1.2s forwards; 
+  -webkit-animation: fadein 1.5s ease-in 1.2s forwards; 
+  -o-animation: fadein 1.5s ease-in 1.2s forwards; 
+  animation: fadein 1.5s ease-in 1.2s forwards;
+}
+
+.footer {
+  height: 80px;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+}
+
+.footerL {
+  width: 20%;
+  position: relative;
+  float: left;
+  margin-left: 38px;
+  margin-top: 50px;
+}
+
+.copyright {
+  font-size: 10px;
+  color: gray;
+  letter-spacing: 2.5px;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1s forwards; 
+  -webkit-animation: fadein 1s ease-in 1s forwards; 
+  -o-animation: fadein 1s ease-in 1s forwards; 
+  animation: fadein 1s ease-in 1s forwards;
+}
+
+.footerR {
+  float: right;
+  overflow: hidden; 
+  margin-right: 95px;
+  margin-top: 32px;
+  position: absolute;
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

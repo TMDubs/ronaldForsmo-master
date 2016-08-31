@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>Art</title>
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+      
+  </head>
+  <style>
+
+/*---FONTS---*/
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+/*---KEYFRAMES---*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+/*---MAIN STYLES---*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageWrapper {
+  position: absolute;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  padding-bottom: 3%;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.header {
+  width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+#logo {
+  width: 50%;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin-top: 4.5vh;
+  margin-left: 30px;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin-top: 5.5vh;
+  min-width: 47%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 27px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageTitle {
+  margin: 150px auto 0 auto;
+  text-align: left; 
+  width: 85%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 85%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.bodyWrapper {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2%;
+}
+ 
+.project {
+  color: #fff;
+  float: left;
+  margin: 1%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 48%;
+}
+
+.project img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.projectTitle {
+  background: rgba(0,0,0,.5);
+  line-height: 225%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  letter-spacing: 4px;
+  font-size: 14px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+  }
+
+.projectTitle:hover {
+  opacity: 1;
+}
+
+  </style>
+  <body>
+    <div class='pageWrapper'>
+      <div class='header'>
+        <div id='logo'><a href='/'>RONALD FORSMO</a></div>
+        <ul class='nav'>
+          <li><a href='/'>HOME</a></li>
+          <li><a href='/about'>ABOUT</a></li>
+          <li><a href='/books'>BOOKS</li>
+          <li><a href='/art' class='activePage'>ART</li>
+          <li><a href='/music'>MUSIC</li>
+          <li><a href='/photos'>PHOTOS</li>
+          <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i class="footerLink fa fa-facebook-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <div class='pageTitle'>Gallery</div>
+      <hr>
+
+      <div class='bodyWrapper'>
+        <div class='project'><img src='/img/artImgs/cosmicCrawl.jpg'>
+          <p class='projectTitle'>COSMIC CRAWL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/yellowPoppies.jpg'>
+          <p class='projectTitle'>YELLOW POPPIES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/janeStruss.jpg'>
+          <p class='projectTitle'>JANE STRUSS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/eggplant_600x400.jpg'>
+          <p class='projectTitle'>EGGPLANT</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/flowersFinal_600x400.jpg'>
+          <p class='projectTitle'>FLOWERS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/mountainsTwo_600x400.jpg'>
+          <p class='projectTitle'>MOUNTAINS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/beachPainting_600x400.jpg'>
+          <p class='projectTitle'>BEACH</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/christmasRoses_600x400.jpg'>
+          <p class='projectTitle'>CHRISTMAS ROSES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/collage_600x400.jpg'>
+          <p class='projectTitle'>COLLAGE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/collageThree_600x400.jpg'>
+          <p class='projectTitle'>COLLAGE THREE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/monaCollage_600x400.jpg'>
+          <p class='projectTitle'>MONA COLLAGE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/treesTwo_600x400.jpg'>
+          <p class='projectTitle'>TREES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stageDrawing_600x400.jpg'>
+          <p class='projectTitle'>STAGE DRAWING</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stoneHengePastel_600x400.jpg'>
+          <p class='projectTitle'>STONEHENGE PASTEL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/sunflowerTwo_600x400.jpg'>
+          <p class='projectTitle'>SUNFLOWER</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/drosophilaCode_600x400.jpg'>
+          <p class='projectTitle'>DROSOPHILA CODE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/guerraFace_600x400.jpg'>
+          <p class='projectTitle'>GUERRA FACE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stainedGlassAngel_600x400.jpg'>
+          <p class='projectTitle'>STAINED GLASS ANGEL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/snowTree_600x400.jpg'>
+          <p class='projectTitle'>SNOW TREE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/oleanna_600x400.jpg'>
+          <p class='projectTitle'>OLEANNA</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/plums_600x400.jpg'>
+          <p class='projectTitle'>PLUMS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/russianBox_600x400.jpg'>
+          <p class='projectTitle'>RUSSIAN BOX</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/seaviewTwo_600x400.jpg'>
+          <p class='projectTitle'>SEAVIEW</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/doorWaterColor_600x400.jpg'>
+          <p class='projectTitle'>DOOR WATER COLOR</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/cosmicCaper_600x400.jpg'>
+          <p class='projectTitle'>COSMIC CAPER</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/higgDrawing_600x400.jpg'>
+          <p class='projectTitle'>HIGG DRAWING</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/pearAndPepperDrawing_600x400.jpg'>
+          <p class='projectTitle'>PEAR & PEPPER DRAWING</p>
+        </div>
+         <div class='project'><img src='/img/artImgs/gladysPadget_600x400.jpg'>
+          <p class='projectTitle'>GLADYS PADGET</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/rudySchild_600x400.jpg'>
+          <p class='projectTitle'>RUDY SCHILD</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/scrimshaw_600x400.jpg'>
+          <p class='projectTitle'>SCRIMSHAW</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/purpleFlower_600x400.jpg'>
+          <p class='projectTitle'>PURPLE FLOWER</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/profile_anonymous_600x400.jpg'>
+          <p class='projectTitle'>PROFILE (Anonymous)</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/kosmicKaboom_600x400.jpg'>
+          <p class='projectTitle'>KOSMIC KABOOM</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/blackHole_600x400.jpg'>
+          <p class='projectTitle'>BLACK HOLE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stringTheory_600x400.jpg'>
+          <p class='projectTitle'>STRING THEORY</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/theBigBang_600x400.jpg'>
+          <p class='projectTitle'>THE BIG BANG</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

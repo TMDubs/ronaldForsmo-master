@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>Art</title>
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+      
+  </head>
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Frutiger LT Std', Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #3b3b3b;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #aa424e !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+
+/*Keyframes------------------*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+.header {
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  background-color: #3b3b3b;
+  position: fixed;
+  border-bottom: 1px solid #252324;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  float: right;
+  position: relative;
+  display: inline;
+  list-style: none;
+  margin-right: 60px;
+  margin-top: 30px;
+}
+
+.nav li {
+  float: left;
+  margin-left: 35px;
+  font-family: 'Frutiger LT Std', Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #aa424e !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #aa424e !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+
+.artWrapper {
+  position: absolute;
+  min-height: 700px;
+  width: 100vw;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.title {
+  font-family: 'Frutiger LT Std', Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  margin-left: 12px;
+  margin-top: 150px;
+  margin-bottom: 16px;
+  opacity: 0;
+  color: #fff;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+hr {
+  opacity: 0;
+  margin-bottom: 40px;
+  margin-left: 15px;
+  width: 97.5vw;
+  color: #fff;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+ 
+.project {
+  color: #fff;
+  float: left;
+  margin: 0 0 1% 1%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 32%;
+}
+
+.project img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.projectTitle {
+  background: rgba(0,0,0,.5);
+  bottom: 0;
+  left: 0;
+  line-height: 225%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  letter-spacing: 4px;
+  font-size: 14px;
+   -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+  }
+
+.projectTitle:hover {
+  opacity: 1;
+}
+
+/*----PROJECT DETAIL/TEXT----*/
+
+.photo {
+  margin: 10% auto 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: 50vw;
+}
+
+
+
+
+  </style>
+  <body>
+    <div class='mainWrapper'>
+      <div class='header'>
+        <ul class='nav'>
+          <li><a href='/'>HOME</a></li>
+          <li><a href='/about'>ABOUT</a></li>
+          <li><a href='/books'>BOOKS</li>
+          <li><a href='/art' class='activePage'>ART</li>
+          <li><a href='/music'>MUSIC</li>
+          <li><a href='/photos'>PHOTOS</li>
+          <li><a href='mailto:&#99;&#104;&#105;&#109;&#101;&#114;&#97;&#49;&#55;&#49;&#52;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;'>CONTACT</a></li>
+          <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i "fa fa-facebook-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+        <div id='projectDetail'>
+            <div class='photo'><img src='../../img/artImgs/projectDetail/cosmicCrawl_1200x800.jpg'>  
+                <p class='projectTitle'>COSMIC CRAWL</p>
+            </div>
+        </div>
+     
+ 
+  
+
+      <!--<div class='artWrapper'>
+        <div class='title'>Gallery</div>
+        <hr>
+        <div class='project'><img src='/img/artImgs/cosmicCrawl.jpg'>
+          <p class='projectTitle'>COSMIC CRAWL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/yellowPoppies.jpg'>
+          <p class='projectTitle'>YELLOW POPPIES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/janeStruss.jpg'>
+          <p class='projectTitle'>JANE STRUSS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/eggplant_600x400.jpg'>
+          <p class='projectTitle'>EGGPLANT</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/flowersFinal_600x400.jpg'>
+          <p class='projectTitle'>FLOWERS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/mountainsTwo_600x400.jpg'>
+          <p class='projectTitle'>MOUNTAINS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/beachPainting_600x400.jpg'>
+          <p class='projectTitle'>BEACH</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/christmasRoses_600x400.jpg'>
+          <p class='projectTitle'>CHRISTMAS ROSES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/collage_600x400.jpg'>
+          <p class='projectTitle'>COLLAGE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/collageThree_600x400.jpg'>
+          <p class='projectTitle'>COLLAGE THREE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/monaCollage_600x400.jpg'>
+          <p class='projectTitle'>MONA COLLAGE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/treesTwo_600x400.jpg'>
+          <p class='projectTitle'>TREES</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stageDrawing_600x400.jpg'>
+          <p class='projectTitle'>STAGE DRAWING</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stoneHengePastel_600x400.jpg'>
+          <p class='projectTitle'>STONEHENGE PASTEL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/sunflowerTwo_600x400.jpg'>
+          <p class='projectTitle'>SUNFLOWER</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/drosophilaCode_600x400.jpg'>
+          <p class='projectTitle'>DROSOPHILA CODE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/guerraFace_600x400.jpg'>
+          <p class='projectTitle'>GUERRA FACE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/stainedGlassAngel_600x400.jpg'>
+          <p class='projectTitle'>STAINED GLASS ANGEL</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/snowTree_600x400.jpg'>
+          <p class='projectTitle'>SNOW TREE</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/oleanna_600x400.jpg'>
+          <p class='projectTitle'>OLEANNA</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/plums_600x400.jpg'>
+          <p class='projectTitle'>PLUMS</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/russianBox_600x400.jpg'>
+          <p class='projectTitle'>RUSSIAN BOX</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/seaviewTwo_600x400.jpg'>
+          <p class='projectTitle'>SEAVIEW</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/doorWaterColor_600x400.jpg'>
+          <p class='projectTitle'>DOOR WATER COLOR</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/cosmicCaper_600x400.jpg'>
+          <p class='projectTitle'>COSMIC CAPER</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/higgDrawing_600x400.jpg'>
+          <p class='projectTitle'>HIGG DRAWING</p>
+        </div>
+        <div class='project'><img src='/img/artImgs/pearAndPepperDrawing_600x400.jpg'>
+          <p class='projectTitle'>Pear & Pepper Drawing</p>
+        </div>
+      </div>-->
+
+  </body>
+</html>

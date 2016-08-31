@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>Music</title>
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+      
+  </head>
+  <style>
+
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageWrapper {
+  position: absolute;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  padding-bottom: 3%;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.header {
+  width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+#logo {
+  width: 50%;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin-top: 4.5vh;
+  margin-left: 30px;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  margin-right: 0px;
+}
+
+.nav ul {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin-top: 5.5vh;
+  min-width: 47%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 27px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageTitle {
+  margin: 150px auto 0 auto;
+  text-align: left; 
+  width: 85%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 85%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.subtitle {
+  font-size: 35px;
+  margin-left: 10%;
+  margin-top: 50px;
+  margin-bottom: 18px;
+  opacity: 0;
+  color: #fff;
+  -moz-animation: fadein 0.75s ease-in .5s forwards; 
+  -webkit-animation: fadein 0.75s ease-in .5s forwards; 
+  -o-animation: fadein 0.75s ease-in .5s forwards; 
+  animation: fadein 0.75s ease-in .5s forwards;
+}
+
+.audio {
+  text-align: left;
+}
+
+#playlist, audio {
+  background-color: #b4b4b4;
+  width: 50%;
+  padding: 20px;
+  margin-left: 10%;
+}
+
+.active a {
+  color:#3b3b3b !important;
+  text-decoration: none;
+}
+
+#playlist li a {
+  padding: 5px;
+  display: block;
+}
+
+#playlist li a:hover{
+  text-decoration:none;
+}
+
+#playlist li { 
+  list-style: none;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  letter-spacing: .5px;
+  font-weight: bold;
+}
+
+.linerNotes p {
+  color: #fff;
+}
+
+.tab {
+  margin-left: 10px;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+#hr2 {
+  margin-top: 60px;
+}
+
+.composition {
+  float: left;
+  margin: 0 2% 2% 0;
+  left: 10%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 25.5%;
+  border: 1px solid gray;
+}
+
+.composition img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.compTitle {
+  background: rgba(0, 0, 0,.8);
+  bottom: 0;
+  left: 0;
+  line-height: 2423%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+ h2 {
+  margin-top: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  }
+
+.compTitle:hover {
+  opacity: 1;
+}
+
+  </style>
+  <body>
+
+    <div class='pageWrapper'>
+      <div class='header'>
+        <div id='logo'><a href='/'>RONALD FORSMO</a></div>
+        <div class='nav'>
+          <ul>
+            <li><a href='/'>HOME</a></li>
+            <li><a href='/about'>ABOUT</a></li>
+            <li><a href='/books'>BOOKS</li>
+            <li><a href='/art'>ART</li>
+            <li><a href='/music' class='activePage'>MUSIC</a></li>
+            <li><a href='/photos'>PHOTOS</li>
+            <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i class="footerLink fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='pageTitle'>Music</div>
+      <hr>
+      <p class='subtitle'>RECORDINGS</P>
+
+      <audio id="audio" preload="none" tabindex="0" controls="" type="audio/mpeg"></audio>
+        <ul id="playlist">
+          <li><a href="/music/recordings/abrahamAndIsaac.mp3"><p class="linerNotes">ABRAHAM & ISAAC | Benjamin Britten</p><p class='tab'>Ronald Forsmo, Marilyn Florez, Michael Fardink (piano) - Tarrytown (May 5, 1982)</p></a></li>
+          <li><a href="/music/recordings/bohemeTwoThree.mp3"><p class="linerNotes">LA BOH&Egrave;ME (Acts II, III) | Giacomo Puccini<p class='tab'>University of Wisconsin (February 2, 1968)</p></a></li>
+          <li><a href="/music/recordings/griegSjoberg.mp3"><p class="linerNotes">JEG ELSKER DIG | Edvard Grieg & TONERNA | Sjoberg</p><p class='tab'>with Dennis Hirschbein (piano)</p></a></li>
+          <li><a href="/music/recordings/handelThank.mp3"><p class="linerNotes">THANKS BE TO THEE | Handel</p><p class='tab'>Temple Emanuel - New York City</p></a></li> 
+          <li><a href="/music/recordings/saranac.mp3"><p class="linerNotes">THE BACON & THE EGG | Schwartz/Dietz & TALE OF THE OYSTER | Cole Porter</p><p class="tab">with Brenda McDonald - Saranac Music Festival Lunch Box Concert</p></a></li>
+         <li><a href="/music/recordings/porterParody.mp3"><p class="linerNotes">YOU'RE THE TOP (Wagner parody) | Words by Ronald Forsmo</p><p class='tab'>Saranac Lake Library Concert</p></a></li>
+          <li><a href="/music/recordings/traviata.mp3"><p class="linerNotes">LA TRAVIATA (Act IV) | Giuseppe Verdi</p><p class='tab'>Ronald Forsmo, Beverly Meyers (December 2, 1972)</p></a></li>
+          <li><a href="/music/recordings/violette.mp3"><p class="linerNotes">LE VIOLETTE | Domenico Scarlatti</p><p class='tab'>Saranac Music Festival Lunch Box Concert</p></a></li>
+           <li><a href="/music/recordings/mikado1983.mp3"><p class="linerNotes">MIKADO (1983)</p></a></li>
+          <li><a href="/music/recordings/barber_ActOne_Westchester.mp3"><p class="linerNotes">THE BARBER OF SEVILLE (Act I) | Gioachino Rossini</p><p class='tab'>Westchester, NY</p></a></li>
+          <li><a href="/music/recordings/fourGriegSongsSaranacLunchboxConcert.mp3"><p class="linerNotes">FOUR SONGS | Edvard Grieg</p><p class='tab'>Saranac Music Festival Lunch Box Concert</p></a></li>
+          <li><a href="/music/recordings/kathysWedding.mp3"><p class="linerNotes">THE LORD'S PRAYER | Albert Hay Malotte</p><p class='tab'>Niece Kathy's Wedding</p></a></li>
+        </ul>
+
+      <hr id='hr2'>
+      <p class='subtitle'>COMPOSITIONS</P>
+
+        <div class='composition'><a href='/music/compositions/pdfs/Psalm23-1Letter.pdf'><img src='/music/compositions/thumbnails/Psalm23-1Letter_600x750.jpg'><h2 class='compTitle'>PSALM 23 - 1 LETTER</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/SummerBlues.pdf'><img src='/music/compositions/thumbnails/SummerBlues_600x750.jpg'><h2 class='compTitle'>SUMMER BLUES</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/BeNearMeTwo.pdf'><img src='/music/compositions/thumbnails/BeNearMeTwo_600x750.jpg'><h2 class='compTitle'>BE NEAR ME</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/ForsmoLittleDoWeKnow.pdf'><img src='/music/compositions/thumbnails/ForsmoLittleDoWeKnow_600x750.jpg'><h2 class='compTitle'>LITTLE DO WE KNOW</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/Amen.pdf'><img src='/music/compositions/thumbnails/Amen_600x750.jpg'><h2 class='compTitle'>AMEN</h2></a>
+        </div>
+         <div class='composition'><a href='/music/compositions/pdfs/IEntreatThee.pdf'><img src='/music/compositions/thumbnails/IEntreatThee_600x750.jpg'><h2 class='compTitle'>I ENTREAT THEE</h2></a>
+        </div>
+         <div class='composition'><a href='/music/compositions/pdfs/DustBunnies.pdf'><img src='/music/compositions/thumbnails/DustBunnies_600x750.jpg'><h2 class='compTitle'>DUST BUNNIES</h2></a>
+        </div>
+         <div class='composition'><a href='/music/compositions/pdfs/MayTheWords.pdf'><img src='/music/compositions/thumbnails/MayTheWords_600x750.jpg'><h2 class='compTitle'>MAY THE WORDS</h2></a>
+        </div>
+         <div class='composition'><a href='/music/compositions/pdfs/MoneyTalks.pdf'><img src='/music/compositions/thumbnails/MoneyTalks_600x750.jpg'><h2 class='compTitle'>MONEY TALKS</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/iWishIMight.pdf'><img src='/music/compositions/thumbnails/iWishIMight_600x750.jpg'><h2 class='compTitle'>I WISH I MIGHT (Dec, 2007)</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/kyrieLordHaveMercy.pdf'><img src='/music/compositions/thumbnails/kyrieLordHaveMercy_600x750.jpg'><h2 class='compTitle'>KYRIE - LORD HAVE MERCY</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/gloria.pdf'><img src='/music/compositions/thumbnails/gloria_600x750.jpg'><h2 class='compTitle'>GLORIA</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/sanctus.pdf'><img src='/music/compositions/thumbnails/sanctus_600x750.jpg'><h2 class='compTitle'>SANCTUS</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/agnusDei.pdf'><img src='/music/compositions/thumbnails/agnusDei_600x750.jpg'><h2 class='compTitle'>AGNUS DEI</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/bishopOfBirmingham.pdf'><img src='/music/compositions/thumbnails/bishopOfBirmingham_600x750.jpg'><h2 class='compTitle'>BISHOP OF BIRMINGHAM</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/kersilie.pdf'><img src='/music/compositions/thumbnails/kersilie_600x750.jpg'><h2 class='compTitle'>KERSILIE</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/mademoiselleCottet.pdf'><img src='/music/compositions/thumbnails/mademoiselleCottet_600x750.jpg'><h2 class='compTitle'>MADEMOISELLE COTTET</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/mAndre.pdf'><img src='/music/compositions/thumbnails/mAndre_600x750.jpg'><h2 class='compTitle'>M. ANDR&Eacute;</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/mme.RogerFeneon.pdf'><img src='/music/compositions/thumbnails/mme.RogerFeneon_600x750.jpg'><h2 class='compTitle'>Mme. ROGER FENEON</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/scheidOfDunkirk.pdf'><img src='/music/compositions/thumbnails/scheidOfDunkirk_600x750.jpg'><h2 class='compTitle'>SCHEID OF DUNKIRK</h2></a>
+        </div>
+        <div class='composition'><a href='/music/compositions/pdfs/madameCouderc.pdf'><img src='/music/compositions/thumbnails/madameCouderc_600x750.jpg'><h2 class='compTitle'>MADAME COUDERC</h2></a>
+        </div>
+      </div>
+
+    <script>
+      var audio;
+      var playlist;
+      var tracks;
+      var current;
+
+      init();
+        function init(){
+          current = 0;
+          audio = $('audio');
+          playlist = $('#playlist');
+          tracks = playlist.find('li a');
+          len = tracks.length - 1;
+          audio[0].volume = .10;
+          playlist.find('a').click(function(e){
+          e.preventDefault();
+          link = $(this);
+          current = link.parent().index();
+          run(link, audio[0]);
+        });
+
+      audio[0].addEventListener('ended',function(e){
+        current++;
+          if(current == len){
+            current = 0;
+            link = playlist.find('a')[0];
+          }else{
+            link = playlist.find('a')[current];    
+          }
+        run($(link),audio[0]);
+        });
+      }
+
+      function run(link, player){
+        player.src = link.attr('href');
+        par = link.parent();
+        par.addClass('active').siblings().removeClass('active');
+        audio[0].load();
+        audio[0].play();
+      }
+    </script>
+
+  </body>
+</html> 
+

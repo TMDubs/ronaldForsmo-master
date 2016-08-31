@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>Books</title>
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+      
+  </head>
+  <style>
+
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageWrapper {
+  position: absolute;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  padding-bottom: 3%;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.header {
+  width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+#logo {
+  width: 50%;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin-top: 4.5vh;
+  margin-left: 30px;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  margin-right: 0px;
+}
+
+.nav ul {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin-top: 5.5vh;
+  min-width: 47%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 27px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.title {
+  margin: 150px auto 0 auto;
+  text-align: left; 
+  width: 100%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 100%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+#advertisement {
+  opacity: 0;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  -moz-animation: fadein .5s ease-in 1.5s forwards; 
+  -webkit-animation: fadein .5s ease-in 1.5s forwards; 
+  -o-animation: fadein .5s ease-in 1.5s forwards; 
+  animation: fadein .5s ease-in 1.5s forwards;
+}
+
+.kindleButtonContainer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#kindleButton {
+  margin-bottom: 3%;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in 1.75s forwards; 
+  -webkit-animation: fadein .5s ease-in 1.75s forwards; 
+  -o-animation: fadein .5s ease-in 1.75s forwards; 
+  animation: fadein .5s ease-in 1.75s forwards;
+}
+
+#kindleButton img {
+  width: 85px;
+  height: 85px;
+}
+
+.reviews {
+  width: 80%;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  margin: 5% auto;
+} 
+
+.author {
+  margin: 1.5% 0 4% 0;
+  color: #00BC5B;
+}
+
+.booksWrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+ 
+.book {
+  color: #fff;
+  float: left;
+  margin: 1%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 23%;
+}
+
+.book img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.bookTitle {
+  background: rgba(0,0,0,.5);
+  line-height: 225%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  letter-spacing: 4px;
+  font-size: 14px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.bookTitle:hover {
+  opacity: 1;
+}
+
+#add2cart {
+  opacity: 0;
+  margin-top: 6%;
+  margin-left: 37%;
+  margin-bottom: 8%;
+  -moz-animation: fadein .5s ease-in 2s forwards; 
+  -webkit-animation: fadein .5s ease-in 2s forwards; 
+  -o-animation: fadein .5s ease-in 2s forwards; 
+  animation: fadein .5s ease-in 2s forwards;
+}
+
+#viewCart {
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3%;
+  -moz-animation: fadein .5s ease-in 2s forwards; 
+  -webkit-animation: fadein .5s ease-in 2s forwards; 
+  -o-animation: fadein .5s ease-in 2s forwards; 
+  animation: fadein .5s ease-in 2s forwards;
+}
+
+  </style>
+  <body>
+
+    <div class='pageWrapper'>
+      <div class='header'>
+        <div id='logo'><a href='/'>RONALD FORSMO</a></div>
+        <div class='nav'>
+          <ul>
+            <li><a href='/'>HOME</a></li>
+            <li><a href='/about'>ABOUT</a></li>
+            <li><a href='/books' class='activePage'>BOOKS</li>
+            <li><a href='/art'>ART</li>
+            <li><a href='/music'>MUSIC</li>
+            <li><a href='/photos'>PHOTOS</li>
+            <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i class="footerLink fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    <div class='booksWrapper'>
+
+      <div class='title'>Books</div>
+      <hr>
+
+      <div class='reviews'>
+        <p><i>I opened the eagerly awaited package carefully as instructed &ndash; I read EVERYTHING from the beginning &ndash; then of course ran to the bathroom as I was laughing out loud and &ndash; well, you know, old ladies who have had several babies have VERY weak bladders &ndash; Still laughing as I type, adored the VERY LONG RUN-ON SENTENCE called Autumn...your brain is undoubtedly willed to science! My dear boy &ndash; wohin next? Climbing the Alps with a wineskin full of an amusing red wine? Sewing a shadow on the heels of a heel? Poling a gondola through the Venetian canals with a robust young tenor shouting O Solo Mio off key? I shall cook an absolutely fabulously weird meal this night to celebrate. Incidentally, given your incredible sense of humor and irony, you are infinitely more interesting than Henry James.</i></p>
+        <p class='author'><b>&mdash; Anne G., Rockport, MA</b></p>
+
+        <p><i>Everyone should have a copy of this book in their library. Your writing talent is unequaled. A true gem!</i></p>
+        <p class='author'><b>&mdash; Monika Renee Cosson, Gulf Breeze, FL</b></p>
+
+        <p><i>How you have chosen to organize this compendium works beautifully: They seem as random and scattered (and de-ranged v. arranged. YAY!) as the pieces themselves! I'll say first that I don't see how anyone can NOT enjoy your writing. If you don't like "Refracted Fairy Tales," hop on over to "...Confabulations" or "...Limericks" That is high praise indeed, that there is something for everyone happily contained herein. If I had to choose this instant, I like best &ndash; so far &ndash; oh dear, this is harder than I thought! I read right straight through "Bios Degradable" which gives dead away your extensive experience in performing arts. I do not let anything keep me from laughing out loud (like the looks of perfect strangers, who chose to remain that way, some making a wide berth away from the cackling lady in the beat-up beach chair).</i></p>
+        <p class='author'><b>&mdash; Carol Furtwangler, Charleston, SC</b></p>
+
+        <p><i>Your brilliance (oh!) I've long known &ndash; so glad your essays, poems & observations to a book have grown.</i></p>
+        <p class='author'><b>&mdash; Gary Wedow (Conductor), NYC</b></p>
+
+        <p><i>Wicked, wacky, witty, wise, whimsical, wonderful!!!</i></p>
+        <p class='author'><b>&mdash; Joanne LaVergne, Alberta, Canada</b></p>
+
+        <p><i>Ronald Forsmo's ever whimsical collection of truly gelogenic delights &ndash; teases and toys with the thinking man's mind and funny-bone at every turn. This wonderful volume of delicious waggery is at once, smart, clever and thought provoking. I think many an oft' quoted wit &ndash; from Wilde & Gilbert through Coward and Parker would have been proud to have penned any number of these pieces. Both myself and my ever ready "ulnar draped humerus" look eagerly forward to future additions and editions!</i></p>
+        <p class='author'><b>&mdash; Keith Jurosko, New York City</b></p>
+
+        <p><i>I am totally amazed at what you've been able to get onto one page. These are little gems, and I admire you for it!</i></p>
+        <p class='author'><b>&mdash; Fay Putnam, Portland, OR</b></p>
+
+        <p><i>Ron Forsmo's creative use of language is astounding! For anyone who is fascinated by words and language used in an incredibly fascinating way! You will smile, you will ponder, you will be amused and even enlightened at times! BRAVO to author Ronald Forsmo. We would like to see your work in "The New Yorker"/or some other literary publication.</i></p>
+        <p class='author'><b>&mdash; Francesca Chenel, NYC</b></p>
+
+        <p><i>This well-written, amusing book of short entries provides a most entertaining read! I highly recommend it!</i></p>
+        <p class='author'><b>&mdash; Todd Walker, NYC</b></p>
+      </div>
+      <hr>
+
+      <p id='advertisement'>Print & Kindle editions are available for purchase!</p>
+      <div class='kindleButtonContainer'>
+        <div id='kindleButton'><a href='https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dkindle-accessories&field-keywords=ronald+forsmo'><img src='/img/buttons/kindlebutton.png'></a>
+        </div>
+      </div>
+      <div id='viewCart'>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+          <input id="viewCartTop" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+        
+      <div class='book'><img src='/img/bookImgs/CC1.jpg'>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+      <div class='book'><img src='/img/bookImgs/CC2.jpg'>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+      
+      <div class='book'><img src='/img/bookImgs/CC3.jpg'>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+      <div class='book'><img src='/img/bookImgs/CC4.jpg'><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+      <div class='book'><img src='/img/bookImgs/CC5.jpg'><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+      <div class='book'><img src='/img/bookImgs/CC6.jpg' >
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+
+      <div class='book'><img src='/img/bookImgs/CC7.jpg'>
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+        <input id="add2cart" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

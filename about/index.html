@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>About</title>
+
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js'></script>
+      
+  </head>
+  <style>
+
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-clip: border-box;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  background-color: #ddd;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*Keyframes------------------*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+@-webkit-keyframes imgfadein {
+    from { opacity: 0;}
+    to   { opacity: 0.48;}
+}
+
+@keyframes imgfadein {
+    from { opacity: 0; }
+    to   { opacity: 0.48; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes imgfadein {
+    from { opacity: 0; }
+    to   { opacity: 0.48; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes imgfadein {
+    from { opacity: 0; }
+    to   { opacity: 0.48; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes imgfadein {
+    from { opacity: 0; }
+    to   { opacity: 0.48; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes imgfadein {
+    from { opacity: 0; }
+}
+
+.nav {
+  float: right;
+  position: relative;
+  display: inline;
+  list-style: none;
+  margin-right: 2%;
+  margin-top: 3%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 2.2vw;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+}
+
+#logo {
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin: 2.3%;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.header {
+  max-width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+#title {
+  margin: 5% auto 0 auto;
+  text-align: left; 
+  width: 85%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.wrapper {
+  height: 100vh;
+  max-width: 1280px;
+  background-color: #3b3b3b;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 85%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.bodyText {
+  opacity: 0;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: justify;
+  font-size: 16px;
+  width: 85%;
+  -moz-animation: fadein .5s ease-in 1s forwards; 
+  -webkit-animation: fadein .5s ease-in 1s forwards; 
+  -o-animation: fadein .5s ease-in 1s forwards; 
+  animation: fadein .5s ease-in 1s forwards;
+}
+
+#contact {
+  opacity: 0;
+  width: 85%;
+  margin: 2% auto;
+  font-family: bold;
+  text-align: right; 
+  color: #00BC5B;
+  font-size: 13px;
+  letter-spacing: 6px;
+  -moz-animation: fadein .5s ease-in 1s forwards; 
+  -webkit-animation: fadein .5s ease-in 1s forwards; 
+  -o-animation: fadein .5s ease-in 1s forwards; 
+  animation: fadein .5s ease-in 1s forwards;
+}
+
+  </style>
+  <body>
+    <div class='wrapper'>
+        <div class='header'>
+          <div id='logo'><a href='/'>RONALD FORSMO</a></div>
+          <ul class='nav'>
+            <li><a href='/'>HOME</a></li>
+            <li><a href='/about' class='activePage'>ABOUT</a></li>
+            <li><a href='/books'>BOOKS</a></li>
+            <li><a href='/art'>ART</li>
+            <li><a href='/music'>MUSIC</li>
+            <li><a href='/photos'>PHOTOS</li>
+            <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i class="footerLink fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      <div id='title'>About</div>
+      <hr>
+        <div class='bodyText'>
+
+          <p>Born in Madison, Wisconsin, E.B. White's "This is New York" was the catalyst that first drew him to the lights of New York City &mdash; with a few significant stops along the way. An avid reader, he plowed through every science fiction book he could get his hand on, and spent many afternoons sitting in darkened theaters staring at the Silver Screen. The name Orpheum with its grand gilded opulence will forever evoke a feeling of nostalgia that nothing can ever replace.<br><br>
+
+          Having exhibited a penchant for art, in a desperate effort to create a small oil painting as a wedding gift, he sliced off a piece of window shade, but was eventually found out when his Mom attempted to close it. A certain amount of yelling ensued. In case you're interested, it remains in his possession to this very day. No doubt his love for books is responsible for what took flight later in his life: a whacking lot of letters to his Mom and older sister, now in his tender loving care. Stop by some afternoon and he'd be thrilled to do a dramatic reading.<br><br>
+
+          Phase two of Mr. Forsmo's life and times resulted in a longish singing career, the details of which I'll leave for another time. Phase three, concurrent with Phase two, set him on the path to becoming a writer, resulting in excess of a 500,00 pages spread over seven self-published books. Harkening back to that early excursion in window shade painting, Mr. Forsmo is responsible for over fifty portraits, water colors, drawings and collages, and most days has him see-sawing between writing and art. All the drawings, paintings and collages represented on the covers of each of his books are by the author.</p>
+
+        </div>
+        <div id='contact'>CHIMERA1714@GMAIL.COM</div>
+      </div>
+  
+  </body>
+</html>

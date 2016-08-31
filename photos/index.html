@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <title>Photos</title>
+      <link rel="stylesheet" href='/css/font-awesome-4.6.3/css/font-awesome.min.css'>
+      
+  </head>
+  <style>
+
+@font-face {
+  font-family: regular;
+  src: url(/css/fonts/frutigerLTStd_Light.woff);
+}
+
+@font-face {
+  font-family: bold;
+  src: url(/css/fonts/frutigerLTStd_Bold.woff);
+  font-weight: bold;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: regular, Gibson-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0 auto;
+  max-width: 1280px;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ddd;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+a:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageWrapper {
+  position: absolute;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  z-index: -1;
+  opacity: 0;
+  padding-bottom: 3%;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein .5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.header {
+  width: 1280px;
+  height: 90px;
+  background-color: #3b3b3b;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #252324;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+#logo {
+  width: 50%;
+  color: #fff;
+  font-size: 30px;
+  float: left;
+  letter-spacing: 6px;
+  margin-top: 4.5vh;
+  margin-left: 30px;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .25s forwards; 
+  -webkit-animation: fadein .5s ease-in .25s forwards; 
+  -o-animation: fadein .5s ease-in .25s forwards; 
+  animation: fadein .5s ease-in .25s forwards;
+}
+
+.nav {
+  margin-right: 0px;
+}
+
+.nav ul {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin-top: 5.5vh;
+  min-width: 47%;
+}
+
+.nav li {
+  float: left;
+  margin-left: 27px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  opacity: 0;
+  -moz-animation: fadein .5s ease-in .5s forwards; 
+  -webkit-animation: fadein 1.5s ease-in .5s forwards; 
+  -o-animation: fadein .5s ease-in .5s forwards; 
+  animation: fadein .5s ease-in .5s forwards;
+}
+
+.nav li a.activePage {
+  color: #00BC5B !important;
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px !important;
+  margin-top: -10px !important;
+}
+
+.fa:hover {
+  color: #00BC5B !important;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.pageTitle {
+  margin: 150px auto 0 auto;
+  text-align: left; 
+  width: 85%;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+hr {
+  opacity: 0;
+  border-width: 1px;
+  width: 85%;
+  margin: 1% auto 2% auto;
+  -moz-animation: fadein .5s ease-in .75s forwards; 
+  -webkit-animation: fadein .5s ease-in .75s forwards; 
+  -o-animation: fadein .5s ease-in .75s forwards; 
+  animation: fadein .5s ease-in .75s forwards;
+}
+
+.bodyWrapper {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2%;
+}
+ 
+.project {
+  color: #fff;
+  float: left;
+  margin: 1%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 48%;
+}
+
+.project img {
+  width: 100%;
+  opacity: 0;
+  -moz-animation: fadein 1s ease-in 1.5s forwards; 
+  -webkit-animation: fadein 1s ease-in 1.5s forwards; 
+  -o-animation: fadein 1s ease-in 1.5s forwards; 
+  animation: fadein 1s ease-in 1.5s forwards;
+}
+
+.projectTitle {
+  background: rgba(0,0,0,.5);
+  line-height: 225%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  letter-spacing: 4px;
+  font-size: 14px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+  }
+
+.projectTitle:hover {
+  opacity: 1;
+}
+
+
+  </style>
+  <body>
+ 
+    <div class='pageWrapper'>
+      <div class='header'>
+        <div id='logo'><a href='/'>RONALD FORSMO</a></div>
+        <div class='nav'>
+          <ul>
+            <li><a href='/'>HOME</a></li>
+            <li><a href='/about'>ABOUT</a></li>
+            <li><a href='/books'>BOOKS</li>
+            <li><a href='/art'>ART</li>
+            <li><a href='/music'>MUSIC</li>
+            <li><a href='/photos' class='activePage'>PHOTOS</a></li>
+            <li><a href='https://www.facebook.com/Meadowfalls?fref=ts'><i class="footerLink fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+   
+      <div class='pageTitle'>Photos</div>
+      <hr>
+
+      <div class='bodyWrapper'>
+        <div class='project'><img src='img/barberWithBeverly.jpg'>
+          <p class='projectTitle'>THE BARBER OF SEVILLE</p>
+        </div>
+        <div class='project'><img src='img/crestwood.jpg'>
+          <p class='projectTitle'>CRESTWOOD (I'm the one on the right)</p>
+        </div>
+        <div class='project'><img src='img/onBoardMidPacific.jpg'>
+          <p class='projectTitle'>ON BOARD | MID-PACIFIC</p>
+        </div>
+        <div class='project'><img src='img/vespa.jpg'>
+          <p class='projectTitle'>MY CALIFORNIA WHEELS</p>
+        </div>
+        <div class='project'><img src='img/mNrPolarized.jpg'>
+          <p class='projectTitle'>ME & MY LATE SISTER MARY</p>
+        </div>
+        <div class='project'><img src='img/momDadMaryMeDog.jpg'>
+          <p class='projectTitle'>MOM, DAD, MARY, ME, & THE DOG</p>
+        </div>
+        <div class='project'><img src='img/carmen.jpg'>
+          <p class='projectTitle'>CARMEN</p>
+        </div>
+         <div class='project'><img src='img/manOfLaMancha1972.jpg'>
+          <p class='projectTitle'>THE MAN OF LA MANCHA (1972)</p>
+        </div>
+         <div class='project'><img src='img/mikado.jpg'>
+          <p class='projectTitle'>MIKADO</p>
+        </div>
+         <div class='project'><img src='img/mikado1985.jpg'>
+          <p class='projectTitle'>MIKADO (1985)</p>
+        </div>
+         <div class='project'><img src='img/nycOpera911Tribute.jpg'>
+          <p class='projectTitle'>911 TRIBUTE | NYC Opera</p>
+        </div>
+         <div class='project'><img src='img/patienceHeadshot.jpg'>
+          <p class='projectTitle'>PATIENCE</p>
+        </div>
+         <div class='project'><img src='img/pirates.jpg'>
+          <p class='projectTitle'>THE PIRATES OF PENZANCE</p>
+        </div>
+         <div class='project'><img src='img/rigolettoHeadshot.jpg'>
+          <p class='projectTitle'>RIGOLETTO | NYC Opera, 2001</p>
+        </div>
+         <div class='project'><img src='img/songOfNorway2.jpg'>
+          <p class='projectTitle'>THE SONG OF NORWAY</p>
+        </div>
+         <div class='project'><img src='img/turandot.jpg'>
+          <p class='projectTitle'>TURANDOT | NYC Opera</p>
+        </div>
+         <div class='project'><img src='img/vasek1973.jpg'>
+          <p class='projectTitle'>THE BARTERED BRIDE (1973)</p>
+        </div>
+        <div class='project'><img src='img/judyInFlowers.jpg'>
+          <p class='projectTitle'>MY SISTER JUDY</p>
+        </div>
+        <div class='project'><img src='img/songOfNorway.jpg'>
+          <p class='projectTitle'>SONG OF NORWAY</p>
+        </div>
+        <div class='project'><img src='img/young.jpg'>
+          <p class='projectTitle'>YOUNG</p>
+        </div>
+        <div class='project'><img src='img/houseOfTheDead.jpg'>
+          <p class='projectTitle'>HOUSE OF THE DEAD | NYC Opera, 1990</p>
+        </div>
+        <div class='project'><img src='img/barberOfSeville.jpg'>
+          <p class='projectTitle'>BARBER OF SEVILLE | Westchester, NY</p>
+        </div>
+        <div class='project'><img src='img/musicMan.jpg'>
+          <p class='projectTitle'>THE MUSIC MAN (1986)</p>
+        </div>
+        <div class='project'><img src='img/carnegieHallDebut.jpg'>
+          <p class='projectTitle'>CARNEGIE HALL DEBUT | NYC, 1994</p>
+        </div>
+        <div class='project'><img src='img/mikado_nankiPoo.jpg'>
+          <p class='projectTitle'>MIKADO (Nanki-Poo)</p>
+        </div>
+        <div class='project'><img src='img/laTraviata_Act2.jpg'>
+          <p class='projectTitle'>LA TRAVIATA (Act II) | Westchester, NY</p>
+        </div>
+        <div class='project'><img src='img/goro_nyc_opera.jpg'>
+          <p class='projectTitle'>GORO | NYC Opera</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
